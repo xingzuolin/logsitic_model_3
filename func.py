@@ -23,3 +23,8 @@ def dev_oot_split(mst_df, seg_no, target_var):
     return dev, oot
 
 
+def is_null_flag(x):
+    if str(x).upper() == 'NAN' or x == '_null_':
+        return True
+    else:
+        return False

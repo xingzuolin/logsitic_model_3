@@ -62,7 +62,7 @@ def read_hive_data(infile, top_n_rows = None, data_label = None, out_hdf5 = None
 
     for element in df.columns:
         if df[element].dtype == object:
-            df[element] = df[element].fillna('_')
+            df[element] = df[element].fillna('_null_')
         if data_label is not None:
             label = list(label_df[label_df['variable'] == element]['label'].values)[0]
             f_content.write("%-35s\t%-20s\t%-20s\n" % (element, df[element].dtype, label))
